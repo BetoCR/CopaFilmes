@@ -7,6 +7,11 @@ namespace CopaFilmes.Api.Models
 {
     public class ChampionShipModel
     {
-        public List<int> SelectedMovies { get; set; }
+        public List<string> SelectedMovies { get; set; }
+
+        public ChampionShipModel()
+        {
+            SelectedMovies = new List<string>();
+        }
     }
 }

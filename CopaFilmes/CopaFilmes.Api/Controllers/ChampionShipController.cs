@@ -6,6 +6,7 @@ using CopaFilmes.Api.Models;
 using CopaFilmes.Domain.ChampionShipAggregation;
 using CopaFilmes.Domain.MovieAggregate;
 using CopaFilmes.Domain.Rules;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,7 +20,7 @@ namespace CopaFilmes.Api.Controllers
         ITiebreakerRule tiebreakRule;
         IMovieService movieService;
 
-        public ChampionShipController(ISwitchingRule switchingRule, 
+        public ChampionShipController(ISwitchingRule switchingRule,
             ITiebreakerRule tiebreakRule, IMovieService movieService)
         {
             this.switchingRule = switchingRule;
@@ -27,11 +28,17 @@ namespace CopaFilmes.Api.Controllers
             this.movieService = movieService;
         }
 
-        [HttpGet("Api/ChampionShip/Start")]
-        public IActionResult Start()
+        [DisableCors()]
+        [HttpPost("Api/ChampionShip/Start")]
+        public IActionResult Start(ChampionShipModel model)
         {
+            if (model.SelectedMovies.Count != 8)
+                return BadRequest("A quantidade de filmes selecionados tem que ser 8!");
+
             var movies
-                = movieService.GetAllMovies();
+                = movieService.GetAllMovies()
+                    .Where(a => model.SelectedMovies.Any(b => b.Equals(a.id)))
+                    .ToList();
 
             var championShip
                 = new ChampionShip(movies);
