@@ -7,6 +7,10 @@ using System.Linq;
 
 namespace CopaFilmes.Domain.Rules
 {
+    /// <summary>
+    /// Implementação que realiza o chaveamento dos confrontos baseado na 
+    /// regra primeiro com ultimo, segundo com penultimo...
+    /// </summary>
     public class SwitchingByLastAndFirst : ISwitchingRule
     {
         public IEnumerable<Game> PerformSwitching(IList<Movie> movies)

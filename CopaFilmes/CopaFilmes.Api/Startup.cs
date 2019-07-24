@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using CopaFilmes.Domain.ChampionShipAggregation;
 using CopaFilmes.Domain.MovieAggregate;
 using CopaFilmes.Domain.Rules;
+using CopaFilmes.Infra.Repositories;
 using CopaFilmes.Infra.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,8 +44,11 @@ namespace CopaFilmes.Api
 
             services.AddScoped<ISwitchingRule>(a => new SwitchingByLastAndFirst());
 
+            services.AddScoped<IChampionShipRepository>(a => new ChampionShipRepositoryByMemory());
+
             services.AddScoped<ITiebreakerRule>(a => new TieBreakerByOrder());
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllHeaders",

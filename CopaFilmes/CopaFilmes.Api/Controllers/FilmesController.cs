@@ -14,11 +14,11 @@ namespace CopaFilmes.Api.Controllers
 {
     [DisableCors()]
     [ApiController]
-    public class FilmesController : ControllerBase
+    public class MoviesController : ControllerBase
     {   
         IMovieService movieService;
 
-        public FilmesController(IMovieService movieService)
+        public MoviesController(IMovieService movieService)
         {   
             this.movieService = movieService;
         }

@@ -19,8 +19,9 @@ namespace CopaFilmes.Domain.ChampionShipAggregation
 
         public void Play(ITiebreakerRule tieBreakerRule)
         {
-            if(Player1.nota == Player2.nota)
+            if(Player1.nota.Equals(Player2.nota))
             {
+                //Aplica critério de desempate
                 Winner = tieBreakerRule.ApplyAndGetWinner(Player1, Player2);
                 return;
             }

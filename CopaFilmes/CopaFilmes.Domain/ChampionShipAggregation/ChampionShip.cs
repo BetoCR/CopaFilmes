@@ -24,6 +24,9 @@ namespace CopaFilmes.Domain.ChampionShipAggregation
 
         public ChampionShip(IEnumerable<Movie> movies)
         {
+            if (movies.Count() % 2 != 0)
+                throw new InvalidOperationException("A quantidade de filmes tem que ser par!");
+
             Movies = movies;
             phases = new List<ChampionShipPhase>();
         }
@@ -50,7 +53,7 @@ namespace CopaFilmes.Domain.ChampionShipAggregation
                 phase.Start(switchingRule, tiebreakerRule);
 
                 players
-                    = phase.Winners.ToList();
+                    = phase.Winners.OrderBy(a=> a.titulo).ToList();
 
                 playersCount 
                     = players.Count();
