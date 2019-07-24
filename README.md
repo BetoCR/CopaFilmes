@@ -8,7 +8,7 @@ Tecnologias utilizadas:
 	Front-end
 		SPA com Vue Cli
 
-Back-end
+
 	A camada de back-end foi criada a partir de um projeto .net core utilizando o visual studio 2017.
 	Foram criados 3 testes para garantir as regras do campeonato.
 
@@ -19,7 +19,7 @@ Back-end
 
 	Diretório: CopaFilmes
 
-Front-end
+
 	O front-end foi criado com o vscode utilizando vue cli, axios e VueRouter.
 	O layout foi criado utilizando o bootstrap e com um pouco de css próprio.
 	A baseUrl para requisições com o backend está sendo apontado para o seguinte endereço: https://localhost:44330/api/ localizado no arquivo config.js
