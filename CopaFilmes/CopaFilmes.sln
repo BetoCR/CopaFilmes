@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Api", "02 Api", "{6C3FBD23-DD29-49B7-9F00-14E6940106F7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 FrontEnd", "01 FrontEnd", "{C6E6A81E-273F-4E3A-BEE5-4FCB44A81C0E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaFilmes.Api", "CopaFilmes.Api\CopaFilmes.Api.csproj", "{B54CBC56-83E0-413D-86F0-D51CEBC09C52}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Domain", "03 Domain", "{AAF87E36-70AA-4F43-87C1-96D78EF91BD2}"
@@ -15,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaFilmes.Domain", "CopaFi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Infra", "04 Infra", "{0995CF32-58C3-4B1B-A679-38CBC8E93F41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopaFilmes.Infra", "CopaFilmes.Infra\CopaFilmes.Infra.csproj", "{FA0AEE57-D15A-43E0-BE38-01D7FAEDD841}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CopaFilmes.Infra", "CopaFilmes.Infra\CopaFilmes.Infra.csproj", "{FA0AEE57-D15A-43E0-BE38-01D7FAEDD841}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 Tests", "05 Tests", "{2BEAE7D8-474B-47A0-93B7-EEB63931C8A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainTest", "DomainTest\DomainTest.csproj", "{E2B64AEC-D8A1-4B39-B462-797AF3D11DD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainTest", "DomainTest\DomainTest.csproj", "{E2B64AEC-D8A1-4B39-B462-797AF3D11DD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
